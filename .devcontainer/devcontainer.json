@@ -1,0 +1,21 @@
+{
+    "name": "Tailscale DinD Devcontainer",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "runArgs": ["--device=/dev/net/tun", "--cap-add=NET_ADMIN", "--security-opt", "apparmor=unconfined"],
+    "features": {
+        "ghcr.io/tailscale/codespace/tailscale": {},
+        "docker-in-docker": {}
+    },
+    "extensions": [
+        "ms-azuretools.vscode-docker",
+        "Tailscale.tailscale"
+    ],
+    "postCreateCommand": "tailscale up --authkey ${TAILSCALE_AUTHKEY}",
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "/bin/bash"
+    }
+}
