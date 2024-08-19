@@ -8,7 +8,8 @@
     },
     "extensions": [
         "ms-azuretools.vscode-docker",
-        "Tailscale.tailscale"
+        "Tailscale.tailscale",
+        "Tailscale.vscode-tailscale"
     ],
     "postCreateCommand": "tailscale up --authkey ${TAILSCALE_AUTHKEY}",
     "remoteUser": "vscode",
