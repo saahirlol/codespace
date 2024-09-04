@@ -5,9 +5,9 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"runArgs": ["--device=/dev/net/tun", "--cap-add=NET_ADMIN", "--security-opt", "apparmor=unconfined"],
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/tailscale/codespace/tailscale": {}
+ "features": {
+  "ghcr.io/tailscale/codespace/tailscale": {},
+  "ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1": {}
 	},
 	"customizations": {
 		"vscode": {
